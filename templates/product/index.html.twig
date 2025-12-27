@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row align-items-start">
+
+
+        <div class="col-md-6">
+            <img src={{ asset('images/image.webp') }}
+                 class="img-fluid rounded" alt="Product image">
+        </div>
+
+        <div class="col-md-6">
+            <h1 class="fw-bold mb-3">Premium Wireless Headphones</h1>
+            <p class="fs-4 text-muted">$129.99</p>
+
+            <p>
+                Experience superior sound quality with our premium wireless headphones.
+                Features active noise cancellation, 30-hour battery life, and premium comfort padding.
+            </p>
+
+            <ul class="list-unstyled mb-4">
+                <li><strong>Brand:</strong> AudioTech</li>
+                <li><strong>Color:</strong> Matte Black</li>
+                <li><strong>Connectivity:</strong> Bluetooth 5.0</li>
+                <li><strong>Battery Life:</strong> 30 hours</li>
+            </ul>
+
+            {{ form_start(form) }}
+
+                <div class="mb-3">
+                    {{ form_label(form.quantity) }}
+                    {{ form_widget(form.quantity) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.color) }}
+                    {{ form_widget(form.color) }}
+                </div>
+
+                {{ form_widget(form.submit) }}
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
